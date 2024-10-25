@@ -1,2 +1,21 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'books/list', book: @book_new %>
+    </div>
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+       <%= image_tag 'no_image' %>
+  　  　 <%= @book.title %>
+　　   <%= @book.body %>
+　　   <% if @book.user == current_user %>
+　　     <%= link_to "Edit", edit_book_path(@book.id) %>
+　　   <% end %>
+　　   <% if @book.user == current_user %>
+         <%= link_to "Destroy", book_path(@book), method: :delete %>
+       <% end %>
+
+    </div>
+  </div>
+</div>
+
