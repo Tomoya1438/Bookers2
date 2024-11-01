@@ -5,8 +5,11 @@
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
-       <%= image_tag 'no_image' %>
-  　  　 <%= @book.title %>
+　  　 <%= link_to(user_path(@user)) do %>
+  　 　　 　<%= image_tag(@user.get_profile_image(100, 100)) %>     
+ 　       <%= @user.name %>
+       <% end %>
+  　  　 <%= @book.title %>    
 　　   <%= @book.body %>
 　　   <% if @book.user == current_user %>
 　　     <%= link_to "Edit", edit_book_path(@book.id) %>
