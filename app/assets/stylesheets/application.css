@@ -14,6 +14,11 @@
  *= require_self
  */
  
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
  
  
  strong {
@@ -27,3 +32,5 @@
     padding: 10px 20px;
     border-radius: 5px;
 }
+
+
